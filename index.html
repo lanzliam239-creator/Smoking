@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmokeAware - Understanding Smoking & Its Effects</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Smoke<span>Aware</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="btn-home">🏠 Home</a>
+            <a href="about.html" class="btn-about">ℹ️ About Us</a>
+            <a href="log.html" class="btn-about">📝 Log</a>
+            <a href="https://www.smokefree.gov/" target="_blank" class="btn-quit">🚭 Quit Smoking</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Understanding Smoking</h1>
+        <p>Your comprehensive resource for information about smoking, its effects on health, and resources for those looking to make a change. Knowledge is the first step toward a healthier life.</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchInput" placeholder="Search for information about smoking...">
+            <button class="search-btn" onclick="performSearch()">Search</button>
+        </div>
+        
+        <div class="scroll-indicator">↓ Scroll Down to Explore ↓</div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">What is <span>Smoking</span>?</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 30px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                Smoking is the practice of inhaling and exhaling the smoke of burning tobacco or other substances. It is one of the most common forms of recreational drug use. Tobacco smoking is the most popular practice, carried out by over one billion people globally, primarily in developed countries. The practice has been traced back to as early as 5000 BC in many world cultures. Despite widespread knowledge of its harmful effects, smoking remains a significant public health challenge worldwide.
+            </p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🚬 Tobacco Products</h3>
+                    <p>Tobacco products come in various forms including cigarettes, cigars, pipe tobacco, chewing tobacco, snuff, and snus. Each product delivers nicotine to the body but with different absorption methods and health risks. Cigarettes are the most commonly used tobacco product worldwide, with over 5 trillion cigarettes consumed annually. Understanding the different types of tobacco products helps individuals make informed decisions about their health and recognize the risks associated with each form of consumption.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📈 Global Statistics</h3>
+                    <p>According to the World Health Organization, there are approximately 1.1 billion smokers worldwide. Smoking causes nearly 8 million deaths annually, with about 1.2 million of these being non-smokers exposed to second-hand smoke. The economic cost of smoking is estimated at over $1.4 trillion per year globally, equivalent to about 1.8% of the world's GDP. These numbers highlight the enormous scale of the smoking epidemic and its impact on global health systems and economies.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🔬 Chemical Composition</h3>
+                    <p>Cigarette smoke contains over 7,000 chemicals, including at least 70 known carcinogens. When a cigarette burns, it releases thousands of harmful compounds including tar, carbon monoxide, formaldehyde, arsenic, benzene, and polonium-210. Nicotine, the addictive component, reaches the brain within 10 seconds of inhalation. Understanding these chemical components helps illustrate why smoking is so harmful and why breaking the addiction is challenging for many individuals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">1.1B</span>
+                <span class="stat-label">Smokers Worldwide</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8M</span>
+                <span class="stat-label">Deaths Per Year</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7,000+</span>
+                <span class="stat-label">Chemicals in Smoke</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">70+</span>
+                <span class="stat-label">Known Carcinogens</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Effects Section -->
+    <section class="health-effects content-section">
+        <div class="container">
+            <h2 class="section-title">Health <span>Effects</span> of Smoking</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                The health consequences of smoking are extensive and well-documented. Smoking damages nearly every organ in the body and affects overall health in numerous ways. From respiratory diseases to cardiovascular problems and various forms of cancer, the impact of smoking on health is profound and often irreversible. Understanding these effects is crucial for making informed decisions about tobacco use.
+            </p>
+            
+            <div class="effects-list">
+                <div class="effect-item">
+                    <div class="effect-icon">🫁</div>
+                    <div class="effect-content">
+                        <h4>Lung Cancer</h4>
+                        <p>Smoking is the leading cause of lung cancer, responsible for approximately 85% of all cases. The risk of developing lung cancer is 15-30 times higher in smokers compared to non-smokers. Early detection is challenging, making prevention through smoking cessation critically important for reducing mortality rates.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">❤️</div>
+                    <div class="effect-content">
+                        <h4>Heart Disease</h4>
+                        <p>Smoking damages blood vessels and increases the risk of atherosclerosis, heart attacks, and strokes. Smokers are 2-4 times more likely to develop coronary heart disease than non-smokers. The chemicals in tobacco smoke damage the lining of blood vessels, leading to plaque buildup and reduced blood flow.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">😮‍💨</div>
+                    <div class="effect-content">
+                        <h4>COPD (Chronic Obstructive Pulmonary Disease)</h4>
+                        <p>COPD includes chronic bronchitis and emphysema, progressive lung diseases that cause breathing difficulties. Smoking is responsible for about 85-90% of all COPD cases. The damage to lung tissue is irreversible, making early cessation essential for preserving lung function.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🦷</div>
+                    <div class="effect-content">
+                        <h4>Oral Health Problems</h4>
+                        <p>Smoking causes bad breath, tooth discoloration, gum disease, and significantly increases the risk of oral cancer. The heat and chemicals from smoke damage oral tissues and reduce blood flow to the gums, impairing healing and increasing susceptibility to infections.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🧠</div>
+                    <div class="effect-content">
+                        <h4>Neurological Effects</h4>
+                        <p>Nicotine addiction alters brain chemistry and structure. Smoking increases the risk of stroke by 2-4 times and has been linked to cognitive decline and increased risk of dementia in older adults. The addiction itself affects mood, concentration, and stress levels.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🦴</div>
+                    <div class="effect-content">
+                        <h4>Bone and Joint Problems</h4>
+                        <p>Smoking reduces bone density and increases the risk of osteoporosis and fractures. It also impairs the healing process after injuries or surgeries. The chemicals in tobacco interfere with calcium absorption and the function of bone-building cells.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">👁️</div>
+                    <div class="effect-content">
+                        <h4>Vision Problems</h4>
+                        <p>Smoking increases the risk of cataracts, macular degeneration, and optic nerve damage. These conditions can lead to vision loss and blindness. Smokers are 2-3 times more likely to develop age-related macular degeneration compared to non-smokers.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🧬</div>
+                    <div class="effect-content">
+                        <h4>Reproductive Health</h4>
+                        <p>Smoking affects fertility in both men and women. It can cause erectile dysfunction, reduced sperm quality, pregnancy complications, and increased risk of birth defects. Women who smoke during pregnancy face higher risks of miscarriage, premature birth, and low birth weight babies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second-hand Smoke Section -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2 class="section-title">The Danger of <span>Second-Hand Smoke</span></h2>
+            <p style="font-size: 18px; color: #bbb; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                Second-hand smoke, also known as environmental tobacco smoke, is the combination of smoke from the burning end of a cigarette and the smoke exhaled by smokers. It contains the same harmful chemicals as directly inhaled smoke and poses serious health risks to non-smokers, particularly children and pregnant women. There is no safe level of exposure to second-hand smoke.
+            </p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>👶 Effects on Children</h3>
+                    <p>Children exposed to second-hand smoke are at increased risk of sudden infant death syndrome (SIDS), acute respiratory infections, ear problems, and more frequent and severe asthma attacks. Exposure can also affect lung development and cognitive function. Creating smoke-free environments is essential for protecting children's health.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏠 Indoor Air Quality</h3>
+                    <p>Second-hand smoke can linger in indoor environments for hours after a cigarette is extinguished. The chemicals can settle on surfaces and be re-released into the air, creating what's known as "third-hand smoke." This poses ongoing risks to anyone in the environment, even after smoking has stopped.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🌍 Public Health Impact</h3>
+                    <p>Second-hand smoke causes approximately 1.2 million premature deaths annually worldwide. Many countries have implemented smoke-free legislation to protect citizens from second-hand smoke in public places and workplaces. These laws have proven effective in reducing exposure and improving public health outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Smoking Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Different <span>Types</span> of Smoking</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                While cigarette smoking is the most common form of tobacco use, there are several other methods of smoking tobacco, each with its own set of risks and health implications. Understanding these different types helps provide a complete picture of tobacco consumption and its effects on health.
+            </p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🚬 Cigarettes</h3>
+                    <p>Cigarettes are the most widely used tobacco product globally. They consist of finely cut tobacco leaves rolled in paper. Despite being filtered, cigarettes deliver a potent dose of nicotine and harmful chemicals. Modern cigarettes are designed to be highly addictive, with additives that enhance nicotine absorption and flavor. The convenience and widespread availability of cigarettes contribute to their popularity.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🚬 Cigars</h3>
+                    <p>Cigars contain a single type of air-cured or dried tobacco, wrapped in a tobacco leaf. They contain higher levels of nicotine than cigarettes, with one large cigar potentially containing as much tobacco as an entire pack of cigarettes. Cigar smoking is associated with increased risks of oral, laryngeal, and esophageal cancers. The misconception that cigars are "safer" than cigarettes is dangerous and incorrect.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🪝 Hookah/Shisha</h3>
+                    <p>Hookah smoking involves passing smoke through water before inhalation. Despite claims of being "healthier," hookah smoke contains significant levels of toxins and carcinogens. A typical one-hour hookah session can deliver as much smoke as 100 or more cigarettes. The social nature of hookah smoking often leads to longer exposure sessions and the sharing of mouthpieces raises additional health concerns.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>💨 Vaping/E-cigarettes</h3>
+                    <p>Electronic cigarettes deliver nicotine through vapor rather than smoke. While often marketed as safer alternatives, vaping products contain harmful chemicals and their long-term health effects are not yet fully understood. Vaping has been linked to lung injuries, and the high nicotine content poses significant addiction risks, especially among young users.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏺 Pipes</h3>
+                    <p>Pipe smoking involves burning loose tobacco in a pipe bowl and inhaling the smoke through a stem. Pipe smokers have similar health risks to cigarette smokers, including increased risks of various cancers. The ritualistic nature of pipe smoking and the variety of tobacco blends available contribute to its continued practice among certain groups.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🌿 Other Tobacco Products</h3>
+                    <p>Other forms include chewing tobacco, snuff, and snus (smokeless tobacco). These products deliver nicotine through the oral mucosa and are associated with oral cancers, gum disease, and tooth decay. While they may avoid lung-related risks of smoking, they carry their own significant health dangers and are not safe alternatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits of Quitting Section -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2 class="section-title">Benefits of <span>Quitting</span> Smoking</h2>
+            <p style="font-size: 18px; color: #bbb; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                The human body has an remarkable ability to heal and recover from the damage caused by smoking. Quitting smoking at any age provides immediate and long-term health benefits. The timeline of recovery begins within minutes of the last cigarette and continues for years.
+            </p>
+            
+            <div class="effects-list">
+                <div class="effect-item">
+                    <div class="effect-icon">⏱️</div>
+                    <div class="effect-content">
+                        <h4>20 Minutes After Quitting</h4>
+                        <p>Your heart rate and blood pressure begin to return to normal levels. The carbon monoxide levels in your blood start to decrease, allowing oxygen levels to begin returning to normal. Your hands and feet may feel warmer as circulation improves.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🕐</div>
+                    <div class="effect-content">
+                        <h4>12 Hours After Quitting</h4>
+                        <p>The carbon monoxide level in your blood drops to normal. Oxygen levels increase significantly, improving the function of all body systems. You may start to feel more energetic as your body no longer has to compensate for the oxygen displacement caused by carbon monoxide.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">📅</div>
+                    <div class="effect-content">
+                        <h4>2 Weeks to 3 Months</h4>
+                        <p>Circulation improves and lung function increases. Walking becomes easier as your lung capacity improves. The cilia in your lungs begin to regrow, increasing your ability to handle mucus and reduce infection risk. Your risk of heart attack begins to decrease.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🗓️</div>
+                    <div class="effect-content">
+                        <h4>1 to 9 Months</h4>
+                        <p>Coughing and shortness of breath decrease as lung function continues to improve. The cilia regain normal function, increasing ability to clean the lungs and reduce infection. Your overall energy levels increase as your body continues to heal from the effects of smoking.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🎂</div>
+                    <div class="effect-content">
+                        <h4>1 Year After Quitting</h4>
+                        <p>Your risk of coronary heart disease is half that of a smoker's. Your risk of heart attack decreases significantly. The excess risk of heart disease caused by smoking has been reduced by about half. This is a major milestone in your journey to better health.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🎉</div>
+                    <div class="effect-content">
+                        <h4>5 to 15 Years</h4>
+                        <p>Your risk of stroke is reduced to that of a non-smoker. Your risk of cancers of the mouth, throat, and esophagus is half that of a smoker's. Your risk of cervical cancer falls to that of a non-smoker. Your overall life expectancy continues to increase.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">🏆</div>
+                    <div class="effect-content">
+                        <h4>10+ Years After Quitting</h4>
+                        <p>Your risk of lung cancer falls to about half that of a smoker. Your risk of cancer of the larynx and pancreas decreases. Your risk of coronary heart disease is the same as a non-smoker's. You've added years to your life and life to your years.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://www.smokefree.gov/" target="_blank" class="submit-btn" style="display: inline-block; padding: 20px 60px; text-decoration: none;">
+                    🚭 Start Your Quit Journey Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Myths and Facts Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Common <span>Myths</span> vs Facts</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                There are many misconceptions about smoking and its effects. Understanding the truth behind these myths is essential for making informed decisions about tobacco use and for supporting those who want to quit.
+            </p>
+            
+            <div class="effects-list">
+                <div class="effect-item">
+                    <div class="effect-icon">❌</div>
+                    <div class="effect-content">
+                        <h4>Myth: "Low-tar" or "light" cigarettes are safer</h4>
+                        <p><strong>Fact:</strong> There is no safe cigarette. Smokers of "light" cigarettes often compensate by inhaling more deeply, smoking more frequently, or blocking ventilation holes, negating any potential benefit. The health risks remain significant regardless of the cigarette type.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">❌</div>
+                    <div class="effect-content">
+                        <h4>Myth: It's too late to quit - the damage is done</h4>
+                        <p><strong>Fact:</strong> It's never too late to quit. The body begins healing within minutes of the last cigarette. Even people who have smoked for decades can see significant health improvements and reduced disease risk after quitting.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">❌</div>
+                    <div class="effect-content">
+                        <h4>Myth: Smoking just affects the smoker</h4>
+                        <p><strong>Fact:</strong> Second-hand smoke causes serious health problems for non-smokers, including family members and children. Third-hand smoke, which lingers on surfaces, can also pose risks. The impact of smoking extends far beyond the individual smoker.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">❌</div>
+                    <div class="effect-content">
+                        <h4>Myth: Vaping is completely safe</h4>
+                        <p><strong>Fact:</strong> While potentially less harmful than traditional cigarettes, vaping is not safe. E-cigarettes contain harmful chemicals, and their long-term health effects are still being studied. The high nicotine content also poses addiction risks.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">❌</div>
+                    <div class="effect-content">
+                        <h4>Myth: You just need willpower to quit</h4>
+                        <p><strong>Fact:</strong> Nicotine addiction is a complex condition that often requires multiple approaches to overcome. Many people benefit from counseling, medication, and support groups. Quitting is a journey, and there's no shame in seeking help.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">❌</div>
+                    <div class="effect-content">
+                        <h4>Myth: Natural tobacco is healthier</h4>
+                        <p><strong>Fact:</strong> All tobacco contains nicotine and produces harmful chemicals when burned. "Natural" or "organic" tobacco still delivers the same health risks. There is no healthy way to consume tobacco products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Help Section -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2 class="section-title">How to <span>Help</span> Someone Quit</h2>
+            <p style="font-size: 18px; color: #bbb; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                Supporting someone who is trying to quit smoking can make a significant difference in their success. Understanding how to provide effective support without being judgmental or pushy is key to being a helpful ally in their quit journey.
+            </p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>👂 Listen Without Judgment</h3>
+                    <p>Allow them to express their feelings about quitting without offering unsolicited advice. Acknowledge their struggles and celebrate their successes. Sometimes the most helpful thing you can do is simply be there to listen when they need to talk about their journey.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🎁 Celebrate Milestones</h3>
+                    <p>Acknowledge their progress, whether it's one day or one year smoke-free. Small celebrations can help maintain motivation. Consider offering to do something special together as a reward for reaching their goals.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🎯 Help Identify Triggers</h3>
+                    <p>Work together to identify situations that trigger cravings and help develop strategies to cope with them. This might include finding alternative activities, avoiding certain situations, or developing new routines that don't involve smoking.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏃 Encourage Healthy Activities</h3>
+                    <p>Suggest and participate in healthy activities together, such as exercise, hobbies, or social events that don't involve smoking. Physical activity can help reduce cravings and manage the stress of quitting.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏠 Create a Smoke-Free Environment</h3>
+                    <p>If you live with someone trying to quit, make your home smoke-free. Remove ashtrays and smoking paraphernalia. This removes visual cues and makes it easier for them to maintain their commitment to quitting.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>❤️ Be Patient</h3>
+                    <p>Quitting is a process, and relapses can happen. If they slip up, don't criticize or lecture. Instead, help them get back on track and remind them of how far they've come. Patience and understanding are crucial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Helpful <span>Resources</span></h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                If you or someone you know is looking to quit smoking or learn more about tobacco use, these resources can provide valuable information, support, and guidance on the journey to a smoke-free life.
+            </p>
+            
+            <div class="effects-list">
+                <div class="effect-item">
+                    <div class="effect-icon">🌐</div>
+                    <div class="effect-content">
+                        <h4>Smokefree.gov</h4>
+                        <p>A comprehensive resource from the National Cancer Institute offering tools, guides, and support for those looking to quit smoking. Includes quit plans, mobile apps, and expert advice. Visit <a href="https://www.smokefree.gov/" target="_blank" style="color: #e94560;">smokefree.gov</a>.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">📞</div>
+                    <div class="effect-content">
+                        <h4>Quitlines</h4>
+                        <p>Free telephone-based support is available in many countries. In the US, call 1-800-QUIT-NOW (1-800-784-8669) to connect with trained counselors who can help you develop a quit plan and provide ongoing support.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">📱</div>
+                    <div class="effect-content">
+                        <h4>Mobile Apps</h4>
+                        <p>Numerous apps are available to help track your progress, manage cravings, and provide motivation. Look for apps that offer features like money saved calculators, health improvement timelines, and community support.</p>
+                    </div>
+                </div>
+                
+                <div class="effect-item">
+                    <div class="effect-icon">👥</div>
+                    <div class="effect-content">
+                        <h4>Support Groups</h4>
+                        <p>Local and online support groups provide a community of people going through similar experiences. Sharing experiences and strategies with others who understand can be incredibly helpful during the quit journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="log.html">Smoking Log</a>
+                <a href="https://www.smokefree.gov/" target="_blank">Quit Smoking</a>
+            </div>
+            <p>&copy; 2024 SmokeAware. All rights reserved. This website is for educational purposes only.</p>
+            <p style="margin-top: 10px; font-size: 12px;">If you need immediate help with quitting smoking, please consult a healthcare professional.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (searchTerm.trim() === '') {
+                alert('Please enter a search term');
+                return;
+            }
+            
+            // Define search results based on common keywords
+            const searchResults = {
+                'quit': 'Check out our Quit Smoking resources or visit smokefree.gov for comprehensive quitting support.',
+                'health': 'Visit our Health Effects section to learn about the impact of smoking on your body.',
+                'cancer': 'Smoking is linked to multiple types of cancer. Read more in our Health Effects section.',
+                'lung': 'Learn about lung cancer, COPD, and other respiratory issues in our Health Effects section.',
+                'heart': 'Smoking significantly increases heart disease risk. See our Health Effects section.',
+                'benefits': 'Discover the amazing benefits of quitting in our Benefits of Quitting section.',
+                'help': 'Find resources and support in our Helpful Resources section.',
+                'secondhand': 'Learn about the dangers of second-hand smoke in our dedicated section.',
+                'myth': 'Check out our Myths vs Facts section for common misconceptions.',
+                'vaping': 'Read about vaping and e-cigarettes in our Types of Smoking section.',
+                'hookah': 'Learn about hookah risks in our Types of Smoking section.',
+                'cigar': 'Find information about cigar smoking in our Types of Smoking section.'
+            };
+            
+            let found = false;
+            for (let keyword in searchResults) {
+                if (searchTerm.includes(keyword)) {
+                    alert(searchResults[keyword]);
+                    found = true;
+                    break;
+                }
+            }
+            
+            if (!found) {
+                alert('No specific results found for "' + searchTerm + '". Try searching for: quit, health, cancer, lung, heart, benefits, help, secondhand, myth, vaping, hookah, or cigar.');
+            }
+        }
+        
+        // Allow search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

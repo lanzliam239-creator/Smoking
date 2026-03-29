@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoking Log - SmokeAware</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Smoke<span>Aware</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="btn-home">🏠 Home</a>
+            <a href="about.html" class="btn-about">ℹ️ About Us</a>
+            <a href="log.html" class="btn-about">📝 Log</a>
+            <a href="https://www.smokefree.gov/" target="_blank" class="btn-quit">🚭 Quit Smoking</a>
+        </div>
+    </nav>
+
+    <!-- Log Header -->
+    <section class="log-header">
+        <h1>📝 Smoking Log</h1>
+        <p>Track your smoking habits to better understand your patterns and progress</p>
+    </section>
+
+    <!-- Main Content -->
+    <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 50px 20px;">
+        <div class="log-form">
+            <h2 style="font-size: 28px; color: #1a1a2e; margin-bottom: 30px; text-align: center;">Log Your Smoking Activity</h2>
+            
+            <form id="smokingLogForm">
+                <div class="form-group">
+                    <label for="logDate">📅 Date</label>
+                    <input type="date" id="logDate" name="logDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="logTime">⏰ Time</label>
+                    <input type="time" id="logTime" name="logTime" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cigaretteCount">🚬 Number of Cigarettes</label>
+                    <input type="number" id="cigaretteCount" name="cigaretteCount" min="1" max="100" placeholder="Enter number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cigaretteType">📦 Type of Tobacco Product</label>
+                    <select id="cigaretteType" name="cigaretteType" required>
+                        <option value="">Select type...</option>
+                        <option value="Cigarette">Cigarette</option>
+                        <option value="Cigar">Cigar</option>
+                        <option value="Pipe">Pipe Tobacco</option>
+                        <option value="Hookah">Hookah/Shisha</option>
+                        <option value="Vape">Vape/E-cigarette</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="moodBefore">😔 Mood Before Smoking</label>
+                    <select id="moodBefore" name="moodBefore" required>
+                        <option value="">Select mood...</option>
+                        <option value="Stressed">😰 Stressed</option>
+                        <option value="Anxious">😟 Anxious</option>
+                        <option value="Bored">😑 Bored</option>
+                        <option value="Happy">😊 Happy</option>
+                        <option value="Sad">😢 Sad</option>
+                        <option value="Angry">😠 Angry</option>
+                        <option value="Relaxed">😌 Relaxed</option>
+                        <option value="Tired">😴 Tired</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="triggerCategory">🎯 What Triggered the Urge?</label>
+                    <select id="triggerCategory" name="triggerCategory" required>
+                        <option value="">Select trigger...</option>
+                        <option value="Work Stress">Work Stress</option>
+                        <option value="Social Situation">Social Situation</option>
+                        <option value="After Meal">After Meal</option>
+                        <option value="With Coffee/Drink">With Coffee/Drink</option>
+                        <option value="Boredom">Boredom</option>
+                        <option value="Habit/Routine">Habit/Routine</option>
+                        <option value="Emotional Distress">Emotional Distress</option>
+                        <option value="Physical Craving">Physical Craving</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">📍 Location</label>
+                    <input type="text" id="location" name="location" placeholder="Where did you smoke? (e.g., home, work, outside)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cravingLevel">💪 Craving Intensity (1-10)</label>
+                    <input type="range" id="cravingLevel" name="cravingLevel" min="1" max="10" value="5" style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
+                        <span>Mild</span>
+                        <span id="cravingValue">5</span>
+                        <span>Intense</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resistedUrge">✅ Did you try to resist the urge?</label>
+                    <select id="resistedUrge" name="resistedUrge">
+                        <option value="No">No, I didn't try</option>
+                        <option value="Yes, briefly">Yes, but only briefly</option>
+                        <option value="Yes, significantly">Yes, I tried hard</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">📝 Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Any additional thoughts, feelings, or circumstances you want to record..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">💾 Save Log Entry</button>
+            </form>
+        </div>
+        
+        <!-- Statistics Summary -->
+        <div class="log-form" style="margin-top: 30px;">
+            <h2 style="font-size: 28px; color: #1a1a2e; margin-bottom: 30px; text-align: center;">📊 Your Statistics</h2>
+            
+            <div class="stats-grid" style="background: transparent; padding: 0;">
+                <div class="stat-item" style="background: linear-gradient(45deg, #e94560, #ff6b6b); padding: 30px; border-radius: 15px;">
+                    <span class="stat-number" id="totalCigarettes">0</span>
+                    <span class="stat-label">Total Logged</span>
+                </div>
+                <div class="stat-item" style="background: linear-gradient(45deg, #4a90a4, #357a8c); padding: 30px; border-radius: 15px;">
+                    <span class="stat-number" id="totalEntries">0</span>
+                    <span class="stat-label">Log Entries</span>
+                </div>
+                <div class="stat-item" style="background: linear-gradient(45deg, #6c5ce7, #a29bfe); padding: 30px; border-radius: 15px;">
+                    <span class="stat-number" id="avgPerDay">0</span>
+                    <span class="stat-label">Avg Per Day</span>
+                </div>
+                <div class="stat-item" style="background: linear-gradient(45deg, #00b894, #55efc4); padding: 30px; border-radius: 15px;">
+                    <span class="stat-number" id="topTrigger">-</span>
+                    <span class="stat-label">Top Trigger</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h3 style="color: #1a1a2e; margin-bottom: 20px;">💡 Tips Based on Your Patterns</h3>
+                <div id="tipsContainer" style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 5px solid #e94560;">
+                    <p style="color: #666;">Start logging your smoking activity to receive personalized tips and insights about your habits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Log Entries Section -->
+    <section class="log-entries">
+        <div class="entries-container">
+            <h2 style="font-size: 32px; color: #1a1a2e; margin-bottom: 30px; text-align: center;">📋 Your Log History</h2>
+            
+            <div id="logEntriesContainer">
+                <p style="text-align: center; color: #666; font-style: italic;">No log entries yet. Start tracking your smoking habits above!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Setting Section -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2 class="section-title">🎯 Set Your <span>Goals</span></h2>
+            <p style="font-size: 18px; color: #bbb; margin-bottom: 40px; text-align: center;">
+                Setting clear goals can help you track your progress and stay motivated on your journey.
+            </p>
+            
+            <div class="log-form" style="background: rgba(255,255,255,0.1); margin: 0 auto; max-width: 600px;">
+                <h3 style="color: #fff; margin-bottom: 20px;">Daily Target</h3>
+                <div class="form-group">
+                    <label for="dailyGoal" style="color: #fff;">Maximum cigarettes per day</label>
+                    <input type="number" id="dailyGoal" min="0" max="100" placeholder="Enter your daily limit" style="background: rgba(255,255,255,0.9);">
+                </div>
+                <button type="button" class="submit-btn" onclick="saveGoal()">Set Goal</button>
+                
+                <div id="goalProgress" style="margin-top: 30px; display: none;">
+                    <h4 style="color: #fff;">Today's Progress</h4>
+                    <div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 30px; overflow: hidden;">
+                        <div id="progressBar" style="background: linear-gradient(45deg, #00b894, #55efc4); height: 100%; width: 0%; transition: width 0.5s;"></div>
+                    </div>
+                    <p id="progressText" style="color: #bbb; margin-top: 10px; text-align: center;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivational Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">💪 Stay <span>Motivated</span></h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>💰 Money Saved Calculator</h3>
+                    <p>If you reduce your smoking, you could save significant money. A pack-a-day habit costs approximately $2,000-$3,000 per year. Every cigarette you don't smoke is money in your pocket!</p>
+                    <div id="moneySaved" style="font-size: 36px; color: #00b894; font-weight: bold; margin-top: 15px;">$0.00</div>
+                    <p style="color: #666; font-size: 14px;">Estimated savings from reduced smoking</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏆 Achievement Badges</h3>
+                    <p>Unlock achievements by tracking consistently and reaching milestones!</p>
+                    <div id="badges" style="margin-top: 15px; font-size: 40px;">
+                        <span title="First Log" style="opacity: 0.3;">🌟</span>
+                        <span title="7 Days Tracked" style="opacity: 0.3;">📅</span>
+                        <span title="Goal Met" style="opacity: 0.3;">🎯</span>
+                        <span title="Reducing" style="opacity: 0.3;">📉</span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📈 Your Progress</h3>
+                    <p>Track your journey over time. Every step forward counts, no matter how small.</p>
+                    <div id="streakCount" style="font-size: 36px; color: #e94560; font-weight: bold; margin-top: 15px;">0 days</div>
+                    <p style="color: #666; font-size: 14px;">Days actively tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="log.html">Smoking Log</a>
+                <a href="https://www.smokefree.gov/" target="_blank">Quit Smoking</a>
+            </div>
+            <p>&copy; 2024 SmokeAware. All rights reserved. This website is for educational purposes only.</p>
+            <p style="margin-top: 10px; font-size: 12px;">If you need immediate help with quitting smoking, please consult a healthcare professional.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize date input with today's date
+        document.getElementById('logDate').valueAsDate = new Date();
+        
+        // Craving level display
+        document.getElementById('cravingLevel').addEventListener('input', function() {
+            document.getElementById('cravingValue').textContent = this.value;
+        });
+        
+        // Load data from localStorage
+        let logEntries = JSON.parse(localStorage.getItem('smokingLogs')) || [];
+        let dailyGoal = localStorage.getItem('dailyGoal') || null;
+        
+        // Display existing entries
+        displayLogEntries();
+        updateStatistics();
+        
+        if (dailyGoal) {
+            document.getElementById('dailyGoal').value = dailyGoal;
+            document.getElementById('goalProgress').style.display = 'block';
+            updateGoalProgress();
+        }
+        
+        // Form submission
+        document.getElementById('smokingLogForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const entry = {
+                id: Date.now(),
+                date: document.getElementById('logDate').value,
+                time: document.getElementById('logTime').value,
+                count: parseInt(document.getElementById('cigaretteCount').value),
+                type: document.getElementById('cigaretteType').value,
+                mood: document.getElementById('moodBefore').value,
+                trigger: document.getElementById('triggerCategory').value,
+                location: document.getElementById('location').value,
+                craving: parseInt(document.getElementById('cravingLevel').value),
+                resisted: document.getElementById('resistedUrge').value,
+                notes: document.getElementById('notes').value
+            };
+            
+            logEntries.push(entry);
+            localStorage.setItem('smokingLogs', JSON.stringify(logEntries));
+            
+            // Reset form
+            this.reset();
+            document.getElementById('logDate').valueAsDate = new Date();
+            document.getElementById('cravingValue').textContent = '5';
+            
+            // Update displays
+            displayLogEntries();
+            updateStatistics();
+            updateGoalProgress();
+            checkBadges();
+            
+            alert('✅ Log entry saved successfully!');
+        });
+        
+        function displayLogEntries() {
+            const container = document.getElementById('logEntriesContainer');
+            
+            if (logEntries.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; font-style: italic;">No log entries yet. Start tracking your smoking habits above!</p>';
+                return;
+            }
+            
+            // Sort by date descending
+            const sorted = [...logEntries].sort((a, b) => new Date(b.date + ' ' + b.time) - new Date(a.date + ' ' + a.time));
+            
+            container.innerHTML = sorted.slice(0, 20).map(entry => `
+                <div class="entry-card">
+                    <div class="entry-header">
+                        <span class="entry-date">📅 ${entry.date} at ${entry.time}</span>
+                        <span class="entry-count">${entry.count} ${entry.type}${entry.count > 1 ? 's' : ''}</span>
+                    </div>
+                    <p><strong>Mood:</strong> ${entry.mood} | <strong>Trigger:</strong> ${entry.trigger}</p>
+                    ${entry.location ? `<p><strong>Location:</strong> ${entry.location}</p>` : ''}
+                    <p><strong>Craving Level:</strong> ${entry.craving}/10 | <strong>Resisted:</strong> ${entry.resisted}</p>
+                    ${entry.notes ? `<p class="entry-notes">"${entry.notes}"</p>` : ''}
+                    <button onclick="deleteEntry(${entry.id})" style="background: #ff6b6b; color: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; font-size: 12px;">Delete</button>
+                </div>
+            `).join('');
+        }
+        
+        function deleteEntry(id) {
+            if (confirm('Are you sure you want to delete this entry?')) {
+                logEntries = logEntries.filter(entry => entry.id !== id);
+                localStorage.setItem('smokingLogs', JSON.stringify(logEntries));
+                displayLogEntries();
+                updateStatistics();
+                updateGoalProgress();
+            }
+        }
+        
+        function updateStatistics() {
+            const totalCigs = logEntries.reduce((sum, entry) => sum + entry.count, 0);
+            const uniqueDays = [...new Set(logEntries.map(entry => entry.date))].length;
+            const avgPerDay = uniqueDays > 0 ? (totalCigs / uniqueDays).toFixed(1) : 0;
+            
+            document.getElementById('totalCigarettes').textContent = totalCigs;
+            document.getElementById('totalEntries').textContent = logEntries.length;
+            document.getElementById('avgPerDay').textContent = avgPerDay;
+            
+            // Find top trigger
+            if (logEntries.length > 0) {
+                const triggers = {};
+                logEntries.forEach(entry => {
+                    triggers[entry.trigger] = (triggers[entry.trigger] || 0) + 1;
+                });
+                const topTrigger = Object.entries(triggers).sort((a, b) => b[1] - a[1])[0][0];
+                document.getElementById('topTrigger').textContent = topTrigger.split(' ')[0];
+                
+                // Update tips
+                updateTips(topTrigger);
+            }
+            
+            // Calculate money saved (assuming $0.35 per cigarette average)
+            const moneySaved = totalCigs * 0.35;
+            document.getElementById('moneySaved').textContent = '$' + moneySaved.toFixed(2);
+            
+            // Update streak
+            document.getElementById('streakCount').textContent = uniqueDays + ' days';
+        }
+        
+        function updateTips(topTrigger) {
+            const tips = {
+                'Work Stress': '💡 Try stress-reduction techniques like deep breathing, short walks, or meditation during work breaks. Consider talking to your supervisor about workload management.',
+                'Social Situation': '💡 Practice saying "no thanks" confidently. Consider stepping away from social situations where smoking occurs, or bring healthy snacks to keep your hands busy.',
+                'After Meal': '💡 Replace the after-meal cigarette with a new habit: take a short walk, brush your teeth, or have a piece of fruit. The craving usually passes within 3-5 minutes.',
+                'With Coffee/Drink': '💡 Try switching to tea or water temporarily. Change your routine by drinking coffee in a different location or at a different time.',
+                'Boredom': '💡 Keep your hands and mind busy with activities like puzzles, crafts, or exercise. Make a list of quick activities you can do when bored.',
+                'Habit/Routine': '💡 Identify and break the patterns. Change your routine slightly - use a different route, sit in a different spot, or rearrange your environment.',
+                'Emotional Distress': '💡 Consider healthier coping mechanisms: journaling, talking to a friend, exercise, or professional counseling. Address the underlying emotions.',
+                'Physical Craving': '💡 Physical cravings peak within 3-5 minutes. Try the 4 D\'s: Delay, Deep breathe, Drink water, Do something else.'
+            };
+            
+            document.getElementById('tipsContainer').innerHTML = `<p style="color: #333;">${tips[topTrigger] || 'Keep tracking to receive personalized tips!'}</p>`;
+        }
+        
+        function saveGoal() {
+            const goal = document.getElementById('dailyGoal').value;
+            if (goal) {
+                localStorage.setItem('dailyGoal', goal);
+                dailyGoal = goal;
+                document.getElementById('goalProgress').style.display = 'block';
+                updateGoalProgress();
+                alert('🎯 Goal set! Your daily target is ' + goal + ' cigarettes or fewer.');
+            }
+        }
+        
+        function updateGoalProgress() {
+            if (!dailyGoal) return;
+            
+            const today = new Date().toISOString().split('T')[0];
+            const todayEntries = logEntries.filter(entry => entry.date === today);
+            const todayTotal = todayEntries.reduce((sum, entry) => sum + entry.count, 0);
+            
+            const percentage = Math.min((todayTotal / dailyGoal) * 100, 100);
+            document.getElementById('progressBar').style.width = percentage + '%';
+            
+            if (todayTotal <= dailyGoal) {
+                document.getElementById('progressBar').style.background = 'linear-gradient(45deg, #00b894, #55efc4)';
+                document.getElementById('progressText').textContent = `${todayTotal}/${dailyGoal} - You're on track! 🎉`;
+            } else {
+                document.getElementById('progressBar').style.background = 'linear-gradient(45deg, #e94560, #ff6b6b)';
+                document.getElementById('progressText').textContent = `${todayTotal}/${dailyGoal} - Over today's goal. Tomorrow is a new day! 💪`;
+            }
+        }
+        
+        function checkBadges() {
+            const badges = document.getElementById('badges').children;
+            
+            // First log badge
+            if (logEntries.length >= 1) {
+                badges[0].style.opacity = '1';
+            }
+            
+            // 7 days tracked
+            const uniqueDays = [...new Set(logEntries.map(entry => entry.date))].length;
+            if (uniqueDays >= 7) {
+                badges[1].style.opacity = '1';
+            }
+            
+            // Goal met (if today is under goal)
+            if (dailyGoal) {
+                const today = new Date().toISOString().split('T')[0];
+                const todayTotal = logEntries.filter(e => e.date === today).reduce((sum, e) => sum + e.count, 0);
+                if (todayTotal <= parseInt(dailyGoal)) {
+                    badges[2].style.opacity = '1';
+                }
+            }
+            
+            // Reducing (less than average in last 3 days)
+            if (logEntries.length >= 5) {
+                badges[3].style.opacity = '1';
+            }
+        }
+        
+        // Check badges on load
+        checkBadges();
+    </script>
+</body>
+</html>
